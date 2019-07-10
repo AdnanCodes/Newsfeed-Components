@@ -40,18 +40,35 @@ function createMenu(menuItems){
   const menuButton = document.querySelector('.menu-button')
   const menu = document.createElement('div')
   const list = document.createElement('ul')
-  const menuitem = menuItems.forEach(()=>document.createElement('li'))
-
+  const menuitem = menuItems.map(item => {
+  let thing = document.createElement('li')
+  thing.textContent = item
+  list.appendChild(thing)
+  //console.log(thing)
+  //return thing
+  }
+  )
+  
   //Attaching elements to appropriate place of Menu button
   menuButton.appendChild(menu)
   menu.appendChild(list)
-  list.appendChild(menuitem)
+
+  console.log(list)
+
+  //list.appendChild(menuitem)
 
   //Setting class names
 
   menu.classList.add('menu')
 
+  //Setting text content
 
 
+  //Button functionality 
 
+  menuButton.addEventListener('click',() => menu.classList.toggle('menu--open'))
+  
+  return menu
 }
+
+createMenu(menuItems)

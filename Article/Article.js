@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Video Games',
+    date: 'June 10th, 2019',
+    firstParagraph: `Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool `,
+
+    secondParagraph: `Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool `,
+
+    thirdParagraph: `Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool Video Games are Cool `
   }
 ];
 
@@ -152,7 +161,7 @@ function createArticle(data){
 
   return article
 }
-
+//Calling function to execute the data
 data.map((data) => createArticle(data))
 
 

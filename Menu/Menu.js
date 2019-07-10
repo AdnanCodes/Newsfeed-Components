@@ -38,6 +38,7 @@ function createMenu(menuItems){
   
   //Creating elements for Menu
   const menuButton = document.querySelector('.menu-button')
+  const header = document.querySelector('.header')
   const menu = document.createElement('div')
   const list = document.createElement('ul')
   const menuitem = menuItems.map(item => {
@@ -50,12 +51,10 @@ function createMenu(menuItems){
   )
   
   //Attaching elements to appropriate place of Menu button
-  menuButton.appendChild(menu)
+  header.appendChild(menu)
   menu.appendChild(list)
 
   console.log(list)
-
-  //list.appendChild(menuitem)
 
   //Setting class names
 
@@ -66,7 +65,7 @@ function createMenu(menuItems){
 
   //Button functionality 
 
-  menuButton.addEventListener('click',() => menu.classList.toggle('menu--open'))
+  menuButton.addEventListener('click', event => menu.classList.toggle('menu--open'))
   
   return menu
 }

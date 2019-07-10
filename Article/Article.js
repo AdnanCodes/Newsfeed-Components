@@ -112,3 +112,48 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+function createArticle(data){
+
+  //Setting up Elements needed for the Article Component
+  const articles = document.querySelector('.articles')
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const articleParaFirst = document.createElement('p')
+  const articleParaSecond = document.createElement('p')
+  const articleParaThird = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  //Setting up Article structure 
+  articles.appendChild(article)
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articleParaFirst)
+  article.appendChild(articleParaSecond)
+  article.appendChild(articleParaThird)
+  article.appendChild(expandButton)
+
+  //Setting class names
+
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+  //Setting text content to appropriate elements
+  articleTitle.textContent = data.title
+  articleDate.textContent = data.date 
+  articleParaFirst.textContent = data.firstParagraph
+  articleParaSecond.textContent = data.secondParagraph
+  articleParaThird.textContent = data.thirdParagraph
+  expandButton.textContent = 'Expand'
+
+  expandButton.addEventListener('click', ()=>article.classList.toggle('article-open'))
+
+  return article
+}
+
+data.map((data) => createArticle(data))
+
+
+

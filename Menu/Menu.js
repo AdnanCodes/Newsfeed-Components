@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out"
 ];
 
 /* 
@@ -34,40 +34,51 @@ let menuItems = [
   
 */
 
-function createMenu(menuItems){
-  
+function createMenu(menuItems) {
   //Creating elements for Menu
-  const menuButton = document.querySelector('.menu-button')
-  const header = document.querySelector('.header')
-  const menu = document.createElement('div')
-  const list = document.createElement('ul')
+  const menuButton = document.querySelector(".menu-button");
+  const header = document.querySelector(".header");
+  const menu = document.createElement("div");
+  const list = document.createElement("ul");
   const menuitem = menuItems.map(item => {
-  let thing = document.createElement('li')
-  thing.textContent = item
-  list.appendChild(thing)
-  //console.log(thing)
-  //return thing
-  }
-  )
-  
-  //Attaching elements to appropriate place of Menu button
-  header.appendChild(menu)
-  menu.appendChild(list)
+    let thing = document.createElement("li");
+    thing.textContent = item;
+    list.appendChild(thing);
+    //console.log(thing)
+    //return thing
+  });
 
-  console.log(list)
+  //Attaching elements to appropriate place of Menu button
+  header.appendChild(menu);
+  menu.appendChild(list);
+
+  console.log(list);
 
   //Setting class names
 
-  menu.classList.add('menu')
+  menu.classList.add("menu");
 
   //Setting text content
 
+  //Button functionality
 
-  //Button functionality 
+  menuButton.addEventListener("click", event =>
+    menu.classList.toggle("menu--open")
+  );
 
-  menuButton.addEventListener('click', event => menu.classList.toggle('menu--open'))
-  
-  return menu
+  return menu;
 }
 
-createMenu(menuItems)
+createMenu(menuItems);
+const toggleMenu = () => {
+  menu.classList.toggle("menu--open");
+  // Toggle the "menu--open" class on your menu reference.
+};
+
+// Start Here: Create a reference to the ".menu" class
+const menu = document.querySelector(".menu");
+// create a reference to the ".menu-button" class
+const menuButton = document.querySelector(".menu-button");
+// Using your menuButton reference, add a click handler that calls toggleMenu
+
+menuButton.addEventListener("click", () => toggleMenu());
